@@ -40,11 +40,10 @@ date = '-2.10.3001'
 ''')
 
 date = input('date:')
-if (
-        len(date) != 10
-        or not date[2] == date[5] == '.'
-        or not ((date[0:2] + date[3:5] + date[6:10]).isdigit())
-    ):
+if \
+        len(date) != 10 \
+        or not date[2] == date[5] == '.' \
+        or not ((date[0:2] + date[3:5] + date[6:10]).isdigit()):
     print('Неверный формат даты')
 else:
     day = int(date[0:2])
