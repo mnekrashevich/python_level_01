@@ -44,7 +44,7 @@ def process_user_choice(choice, person):
     elif choice == 2:
         try:
             count = float(input('Сумма к снятию:'))
-            if round(count,2) != count:
+            if round(count,2) != count or count<0:
                 raise ValueError
             print(withdraw_money(person, count))
         except ValueError:
