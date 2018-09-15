@@ -48,7 +48,7 @@ def process_user_choice(choice, person):
                 raise ValueError
             print(withdraw_money(person, count))
         except ValueError:
-            print('Сумма введена неверно. Введите число с точностью до двух знаков')
+            print('Сумма введена неверно. Введите положительное число с точностью до двух знаков')
 
     else:
         print('Неизвестная опция')
