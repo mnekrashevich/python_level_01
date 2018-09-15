@@ -15,12 +15,17 @@ import re
 name = input('Фамилия Имя: ')
 email = input('e-mail: ')
 
-name_pattern = r'([А-Я][а-я]* [А-Я][а-я]*|[A-z][a-z]* [A-Z][a-z]*)'
+name_pattern = r'[А-Я][а-я]* [А-Я][а-я]*|[A-z][a-z]* [A-Z][a-z]*'
 email_pattern = r'[a-z_0-9]+@[a-z0-9]+\.(ru|org|com)'
 
-if re.fullmatch(name_pattern,name) is None:
+if re.fullmatch(name_pattern, name) is None:
     print('Фамилия Имя введены неверно')
+else:
+    print('Фамилия Имя введены верно')
+
 if re.fullmatch(email_pattern, email) is None:
+    print('e-mail введен не верно')
+else:
     print('e-mail введен не верно')
 
 # Задача - 2:
@@ -63,8 +68,8 @@ some_str = '''
 
 QUOTE = r'.{,25}'
 pattern = r'\.{2,}'
-if re.search(pattern ,some_str):
+if re.search(pattern, some_str):
     print('В тексте встречается более одной точки подряд \nФрагменты текста:')
-    print(re.findall(f'{QUOTE}{pattern}{QUOTE}',some_str))
+    print(re.findall(f'{QUOTE}{pattern}{QUOTE}', some_str))
 else:
     print('В тексте не встречается более одной точки подряд')
